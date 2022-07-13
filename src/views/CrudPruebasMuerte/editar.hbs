@@ -1,0 +1,25 @@
+<div class="contenedorAgregar">
+    <div class="card background">
+        <div class="card-header mx-auto letrasEditar">
+            <h3>Editar Prueba Pos Muerte</h3>
+        </div>
+
+        <div class="card-body"> 
+            <form action="/CrudPruebasMuerte/editar/{{pruebasmuerte._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+
+            <div class="form-group inputs">
+                <input type="text" name="tipoPrueba" class="form-control" placeholder="Pruebas Pos Muerte"
+                value="{{pruebasmuerte.tipoPrueba}}" >
+            </div>
+            
+            <div class="botton-form">
+                <button class="forma" type="submit">
+                    Guardar
+                </button>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>

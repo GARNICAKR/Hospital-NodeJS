@@ -1,0 +1,38 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        {{#each pacientes}}
+            <div class="col-md-2 pos-inline">
+                <div class="card card-body background">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center letras">
+                        <a href="/consultas/agregar/{{_id}}"><i class="fa-solid fa-stethoscope"></i></a>Paciente:<a href="/pacientes/editar/{{_id}}"><i class="fas fa-edit"></i></a>
+                    </h4>
+                    <div class="letrasColor">
+                        <h5><b>
+                            {{Nombre}} {{Apellido}} 
+                        </b>
+                        </h5>
+                        <h6>Edad: {{Edad}}</h6>
+                        <h6>Peso: {{Peso}}</h6>
+                        <h6>Altura: {{Altura}}</h6>
+                        <h6>NSS: {{NSS}}</h6>
+                        <h6>DNI: {{DNI}}</h6>
+                    </div>
+                        <form action="/pacientes/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm " type="submit">Eliminar</button>
+                        </form>
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">No hay pacientes</p>
+                                <a href="/pacientes/agregar" class="btn btn-success btn-block" >Agregar Paciente</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos4"></div>
+    </div>
+</div>

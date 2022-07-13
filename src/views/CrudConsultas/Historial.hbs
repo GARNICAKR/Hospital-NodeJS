@@ -1,0 +1,30 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        {{#each pacientes}}
+            <div class="col-md-3 pos-inline">
+                <div class="card card-body background">
+                    <div class="letrasColor centarLetras">
+                        <h5>
+                            <b>
+                                {{Nombre}} {{Apellido}} 
+                            </b>
+                        </h5>
+                        <h4 class="card-title d-flex aling-items-center letras centarLetras">
+                            <a href="/historial/{{_id}}" class="snDecoration">Historial <i class="fa-solid fa-stethoscope"></i></a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">No hay pacientes</p>
+                                <a href="/pacientes/agregar" class="btn btn-success btn-block" >Agregar Paciente</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos4"></div>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+<form action="/CrudConsultas/result" method="POST">
+<input type="hidden" name="_id" value="{{newConsulta._id}}">
+<input type="hidden" name="enfermedadLimp" value="{{newConsulta.Enfermedades}}">
+
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        <div class="col-md-4 pos-inline">
+            <div class="card card-body background">
+                <h4 class="card-title d-flex justify-content-between aling-items-center letras">
+                    Resultados de la Consulta
+                </h4>
+                <div class="letrasColor">
+                    <h6>Enfermedad mas Probable: {{newConsulta.Enfermedades.[0]}}</h6>
+                    <h6>Enfermedad Segunda mas Probable: {{newConsulta.Enfermedades.[1]}}</h6>
+                    <h6>Enfermedad Tercera mas Probable: {{newConsulta.Enfermedades.[2]}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="divisor-3">
+            <div class="contenedorAgregar">
+                <div class="card background">
+                    <div class="card-header mx-auto letrasAgregar">
+                        <h3>Pruebas de Laboratorio</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group inputs letrasscroll">
+                            <select name="PruebaLab" onchange="select()" id="usuario" size="3">
+                                {{#each pruebalab}}
+                                <option>{{tipoPrueba}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group inputs letrasscroll">
+                            <select name="ResultPruebaLab" onchange="select()" id="usuario" size="3">
+                                <option>Positivo</option>
+                                <option>Negativo</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="botton-form">
+                <button class="forma" type="submit">
+                    Guardar
+                </button>
+            </div>
+            <div class="contenedorAgregar">
+                <div class="card background">
+                    <div class="card-header mx-auto letrasAgregar">
+                        <h3>Pruebas Pos Morte</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group inputs letrasscroll">
+                            <select name="PruebaMuerte" onchange="select()" id="usuario" size="2">
+                                {{#each pruebamuerte}}
+                                <option>{{tipoPrueba}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="form-group inputs letrasscroll">
+                            <select name="ResultPruebaMuerte" onchange="select()" id="usuario" size="2">
+                                <option>Positivo</option>
+                                <option>Negativo</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</form>

@@ -1,0 +1,48 @@
+<div class="contenedorAgregar">
+    <div class="card background">
+        <div class="card-header mx-auto letrasEditar">
+            <h3>Editar Paciente</h3>
+        </div>
+
+        <div class="card-body">
+            <form action="/CrudPacientes/editar/{{paciente._id}}?_method=PUT" method="POST">
+                <input type="hidden" name="_method" value="PUT">
+
+                <div class="form-group inputs">
+                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre"
+                        value="{{paciente.Nombre}}">
+                </div>
+
+                <div class="form-group inputs">
+                    <input type="text" name="Apellido" class="form-control" placeholder="Apellido"
+                        value="{{paciente.Apellido}}">
+        </div>
+         <input type="number" name="Edad" class="form-control" placeholder="Edad" 
+         value="{{paciente.Edad}}">
+        </div>
+        <div class="form-group inputs">
+            <input type="text" name="Peso" class="form-control" placeholder="Peso"
+            value="{{paciente.Peso}}">
+        </div>
+        <div class="form-group inputs">
+            <input type="text" name="Altura" class="form-control" placeholder="Altura"
+            value="{{paciente.Altura}}">
+        </div>
+        <div class="form-group inputs">
+            <input type="text" name="NSS" class="form-control" placeholder="NSS" value="{{paciente.NSS}}">
+        </div>
+
+        <div class="form-group inputs">
+            <input type="text" name="DNI" class="form-control" placeholder="DNI" value="{{paciente.DNI}}">
+        </div>
+
+        <div class="botton-form">
+            <button class="forma" type="submit">
+                Guardar
+            </button>
+        </div>
+
+        </form>
+    </div>
+</div>
+</div>

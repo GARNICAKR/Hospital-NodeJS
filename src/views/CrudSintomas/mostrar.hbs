@@ -1,0 +1,32 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        {{#each sintoma}}
+            <div class="col-md-2 pos-inline">
+                <div class="card card-body background">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center letras">
+                        {{Nombre}}<a href="/sintomas/editar/{{_id}}"><i class="fas fa-edit"></i></a>
+                    </h4>
+                     <h6>
+                        Importancia: {{Importancia}}
+                    </h6>
+                    <div class="let:rasColor">
+                    </div>
+                        <form action="/sintomas/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm " type="submit">Eliminar</button>
+                        </form>
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">No hay Sintomas</p>
+                                <a href="/sintomas/agregar" class="btn btn-success btn-block" >Agregar Sintomas</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos4"></div>
+    </div>
+</div>

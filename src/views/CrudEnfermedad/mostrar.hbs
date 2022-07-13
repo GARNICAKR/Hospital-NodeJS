@@ -1,0 +1,31 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        {{#each enfermedad}}
+            <div class="col-md-2 pos-inline">
+                <div class="card card-body background">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center letras">
+                        {{Enfermedad}}<a href="/enfermedad/editar/{{_id}}"><i class="fas fa-edit"></i></a>
+                    </h4>
+                    <div class="letrasColor">
+                        <h6>{{Sintomas}}</h6>
+                        <h6>{{Signos}}</h6>
+                    </div>
+                        <form action="/enfermedad/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm " type="submit">Eliminar</button>
+                        </form>
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">No hay Enfermedades</p>
+                                <a href="/enfermedad/agregar" class="btn btn-success btn-block" >Agregar una Enfermedad</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos4"></div>
+    </div>
+</div>

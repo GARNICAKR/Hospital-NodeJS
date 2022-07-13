@@ -1,0 +1,26 @@
+<div class="contenedorAgregar">
+    <div class="card background">
+        <div class="card-header mx-auto letrasEditar">
+            <h3>Editar Signo</h3>
+        </div>
+
+        <div class="card-body"> 
+            <form action="/CrudSignos/editar/{{signo._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="_method" value="PUT">
+
+            <div class="form-group inputs">
+                <input type="text" name="Nombre" class="form-control" placeholder="Nombre"
+                value="{{signo.Nombre}}" >
+            <div class="form-group inputs">
+                <input type="number" name="Importancia" class="form-control" placeholder="Importancia" min="1" max="3" value="{{signo.Importancia}}" >
+            </div>
+            <div class="botton-form">
+                <button class="forma" type="submit">
+                    Guardar
+                </button>
+            </div>
+
+            </form>
+        </div>
+    </div>
+</div>

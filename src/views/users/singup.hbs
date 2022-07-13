@@ -1,0 +1,36 @@
+<div class="contenedorAgregar">
+    <div class="card background">
+        <div class="card-header mx-auto letrasAgregar">
+            <h3>Usuario</h3>
+        </div>
+        <div class="card-body">
+            <form action="/users/singup" method="POST">
+
+                <div class="form-group inputs">
+                    <input type="text" name="Nombre" class="form-control" placeholder="Nombre" autofocus>
+                </div>
+                <div class="form-group inputs">
+                    <input type="text" name="Apellido" class="form-control" placeholder="Apellido">
+                </div>
+                <div class="form-group inputs">
+                    <input type="email" name="email" class="form-control" placeholder="usuario">
+                </div>
+                <div class="form-group inputs">
+                    <input type="password" name="password" class="form-control" placeholder="contraseña">
+                </div>
+                <div class="form-group inputs letrasscroll">
+                    <select name="TipoUsuario" onchange="select()" id="usuario">
+                        <option selected="selected">Seleccione un Usuario</option>
+                        <option>Administrador</option>
+                        <option>Doctor</option>
+                    </select>
+                </div>
+                <div class="botton-form">
+                    <button class="forma" type="submit">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

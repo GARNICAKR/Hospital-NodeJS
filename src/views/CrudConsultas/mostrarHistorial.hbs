@@ -1,0 +1,54 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+         <div class="col-md-12">
+                <div class="card card-body background">    
+                      <h4 class="aling-items-center letras centarLetras inlinemode">
+                        <a >Paciente:</a>
+                     </h4>
+                    <h5 class="centarLetras tamanio30 inlinemode">
+                        <b>
+                            {{paciente.Nombre}} {{paciente.Apellido}} 
+                        </b>
+                    </h5>
+                        <h6 class="centarLetras tamanio20">Edad: {{paciente.Edad}}</h6>
+                        <h6 class="centarLetras tamanio20">Peso: {{paciente.Peso}}</h6>
+                        <h6 class="centarLetras tamanio20">Altura: {{paciente.Altura}}</h6>
+                        <h6 class="centarLetras tamanio20">NSS: {{paciente.NSS}}</h6>
+                        <h6 class="centarLetras tamanio20">DNI: {{paciente.DNI}}</h6>               
+                </div>
+         </div>
+        {{#each consultas}}
+            <div class="col-md-8 pos-inline">
+                <div class="card card-body background">
+                    <h4 class="card-title d-flex centarLetras aling-items-center letras">
+                        Consulta:
+                    </h4>
+                    <div class="letrasColor">
+                        </h5>
+                        <h6 class="letras">Sintomas:</h6> <h6>{{SintomasPa}}</h6>
+                        <h6 class="letras">Signos: </h6><h6>{{SignosPa}}</h6>
+                        <h6 class="letras">Pruebas Laboratorio: </h6><h6>{{PruebaLab}} Resultado: {{ResultPruebaLab}}</h6>
+                        <h6 class="letras">Pruebas Pos Muerte: </h6><h6>{{PruebaMuerte}} Resultado: {{ResultPruebaMuerte}}
+                        </h6>
+                        <h6 class="letras">Posibles Enfermedades: </h6><h6>{{Enfermedades}}</h6>
+                    </div>
+                    <!--
+                        <form action="/pacientes/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm " type="submit">Eliminar</button>
+                        </form>-->
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">Este Paciente no ha recibido consultas</p>
+                                <a href="/pacientes/mostrar" class="btn btn-success btn-block" >Selecione un Paciente</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos4"></div>
+    </div>
+</div>

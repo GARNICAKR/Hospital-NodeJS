@@ -1,0 +1,33 @@
+<div class="contenedor-mostrar">
+    <div class="contenedor-flex">
+        {{#each pruebasmuerte}}
+            <div class="col-md-2 pos-inline">
+                <div class="card card-body background">
+                    <h4 class="card-title d-flex justify-content-between aling-items-center letras">
+                        Prueba Pos Murte:<a href="/prueba-muerte/editar/{{_id}}"><i class="fas fa-edit"></i></a>
+                    </h4>
+                    <div class="letrasColor">
+                        <h5><b>
+                            {{tipoPrueba}}
+                        </b>
+                        </h5>
+                    </div>
+                        <form action="/prueba-muerte/eliminar/{{_id}}?_method=DELETE" method="POST">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <button class="btn btn-danger btn-block btn-sm " type="submit">Eliminar</button>
+                        </form>
+                </div>
+            </div>
+            {{else}}
+                    <div class="col-md-2 aling-items-center contenedor-flex-centro">
+                        <div class="card mx-auto">
+                            <div class="card-body">
+                                <p class="lead">No hay Pruebas de Laboratorio</p>
+                                <a href="/prueba-muerte/agregar" class="btn btn-success btn-block" >Agregar Prueba Pos Muerte</a>
+                        </div>
+                        </div>
+                    </div>
+        {{/each}}
+        <div class="cuadritos"></div>
+    </div>
+</div>
